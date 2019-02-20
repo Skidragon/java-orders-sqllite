@@ -26,6 +26,9 @@ public class Agent {
     @OneToMany(cascade = CascadeType.DETACH, mappedBy = "agent")
     private Set<Customer> customers;
 
+    @OneToMany(cascade = CascadeType.DETACH, mappedBy = "agent")
+    private Set<Order> orders;
+
     public Agent() {
     }
 }

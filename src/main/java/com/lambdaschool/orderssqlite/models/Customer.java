@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -40,6 +41,9 @@ public class Customer {
     @JoinColumn(name = "agentcode", nullable = false)
     @JsonIgnore
     private Agent agent;
+
+    @OneToMany(cascade = CascadeType.DETACH, mappedBy = "customer")
+    private Set<Order> orders;
 
     public Customer() {
     }
