@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path={"/agents"}, produces= MediaType.APPLICATION_JSON_VALUE)
@@ -29,5 +30,16 @@ public class AgentController {
     @PostMapping("")
     public Agent newAgent(@RequestBody Agent newAgent) throws URISyntaxException {
         return agentRepo.save(newAgent);
+    }
+
+    @PutMapping("agentcode/{agentcode}")
+    public Agent updateAgent(@RequestBody Agent updatedAgent, @PathVariable long agentcode) throws URISyntaxException {
+        Optional<Agent> foundCustomer = agentRepo.findById(agentcode);
+        if(foundCustomer.isPresent()) {
+            updatedAgent.setAgentcode(agentcode);
+            agentRepo.save(updatedAgent);
+            return updatedAgent;
+        }
+            return null;
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path={"/customers"}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -26,9 +27,15 @@ public class CustomerController {
         return custRepo.findCustomerByCode(custcode);
     }
 
-    @PostMapping("")
-    public Customer addNewCustomer(@RequestBody Customer newCustomer) throws URISyntaxException {
-        return custRepo.save(newCustomer);
+    @PutMapping("custcode/{custcode}")
+    public Customer updateCustomer(@RequestBody Customer updatedCustomer, @PathVariable long custcode) throws URISyntaxException {
+        Optional<Customer> foundCustomer = custRepo.findById(custcode);
+        if(foundCustomer.isPresent()) {
+            updatedCustomer.setCustcode(custcode);
+            custRepo.save(updatedCustomer);
+            return updatedCustomer;
+        }
+        return null;
     }
 
 }
