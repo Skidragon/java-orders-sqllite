@@ -1,0 +1,30 @@
+package com.lambdaschool.orderssqlite.controllers;
+
+import com.lambdaschool.orderssqlite.models.Order;
+import com.lambdaschool.orderssqlite.repositories.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(path={"/orders"}, produces = MediaType.APPLICATION_JSON_VALUE)
+public class OrderController {
+
+    @Autowired
+    OrderRepository orderRepo;
+
+    @GetMapping("")
+    public List<Order> getAllOrders() {
+        return orderRepo.findAll();
+    }
+
+    @GetMapping("ordnum/{ordnum}")
+    public Order getOrderByOrderNumber(@PathVariable long ordnum) {
+        return orderRepo.findOrderByOrderNumber(ordnum);
+    }
+}

@@ -13,7 +13,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private long ordernum;
+    private long ordnum;
 
     private double ordamount;
 
