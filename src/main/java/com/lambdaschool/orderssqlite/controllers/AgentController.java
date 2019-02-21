@@ -31,6 +31,12 @@ public class AgentController {
     public List<Object[]> getAllAgentsWithCustomers() {
         return agentRepo.findAllAgentsWithCustomers();
     }
+
+    @GetMapping("/orders")
+    public List<Object[]> getAllAgentsWithOrders() {
+        return agentRepo.findAllAgentsWithOrders();
+    }
+
     @PostMapping("")
     public Agent newAgent(@RequestBody Agent newAgent) throws URISyntaxException {
         return agentRepo.save(newAgent);
