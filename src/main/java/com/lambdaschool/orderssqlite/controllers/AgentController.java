@@ -27,6 +27,10 @@ public class AgentController {
         return agentRepo.findAgentByCode(agentcode);
     }
 
+    @GetMapping("/customers")
+    public List<Object[]> getAllAgentsWithCustomers() {
+        return agentRepo.findAllAgentsWithCustomers();
+    }
     @PostMapping("")
     public Agent newAgent(@RequestBody Agent newAgent) throws URISyntaxException {
         return agentRepo.save(newAgent);
