@@ -17,4 +17,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     @Query(value = "SELECT c.custname, o.ordnum FROM customers AS c INNER JOIN orders AS o WHERE c.custname Like :custname", nativeQuery = true)
     List<Object[]> findCustomerByNameWithOrders(@Param("custname") String custname);
+
+    @Query(value = "SELECT c.custname, o.ordnum FROM customers AS c INNER JOIN orders AS o WHERE c.custcode = :custcode", nativeQuery = true)
+    List<Object[]> findCustomerByNameWithOrders(@Param("custcode") long custname);
 }
