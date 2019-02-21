@@ -12,8 +12,16 @@ public class Agent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="agentcode", nullable = false)
-    private long id;
+    @Column(nullable = false)
+    private long agentcode;
+
+    @OneToMany(cascade = CascadeType.DETACH, mappedBy = "agent")
+    private Set<Customer> customers;
+
+    @OneToMany( cascade = CascadeType.DETACH, mappedBy = "agent")
+    private Set<Order> orders;
+
+    private String agentname;
 
     private String workingarea;
 
@@ -23,12 +31,7 @@ public class Agent {
 
     private String country;
 
-    @OneToMany(cascade = CascadeType.DETACH, mappedBy = "agent")
-    private Set<Customer> customers;
-
-    @OneToMany(cascade = CascadeType.DETACH, mappedBy = "agent")
-    private Set<Order> orders;
-
-    public Agent() {
+    public Agent()
+    {
     }
 }

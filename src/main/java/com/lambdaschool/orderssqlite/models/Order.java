@@ -1,6 +1,5 @@
 package com.lambdaschool.orderssqlite.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,27 +11,24 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ordnum")
-    private long id;
+    @Column(nullable = false)
+    private long ordernum;
 
     private double ordamount;
 
     private double advanceamount;
 
+    @ManyToOne
+    @JoinColumn(name = "custcode", nullable = false)
+    private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name = "agentcode", nullable = false)
+    private Agent agent;
+
     private String orddescription;
 
-    @ManyToOne
-    @JoinColumn(name="custcode")
-    @JsonIgnore
-    Customer customer;
-
-    @ManyToOne
-    @JoinColumn(name="agentcode")
-    @JsonIgnore
-    Agent agent;
-
-
-
-    public Order() {
+    public Order()
+    {
     }
 }
