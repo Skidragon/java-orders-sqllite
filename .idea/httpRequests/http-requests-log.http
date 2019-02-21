@@ -1,0 +1,216 @@
+DELETE http://localhost:2019/customers/custcode/8
+Accept: */*
+Cache-Control: no-cache
+
+"{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}"
+
+<> 2019-02-20T110721.200.json
+
+###
+
+DELETE http://localhost:2019/customers/custcode/1
+Accept: */*
+Cache-Control: no-cache
+
+"{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}"
+
+<> 2019-02-20T110710.500.html
+
+###
+
+DELETE http://localhost:2019/customers/4
+Accept: */*
+Cache-Control: no-cache
+
+"{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}"
+
+<> 2019-02-20T110705.404.html
+
+###
+
+DELETE http://localhost:2019/customers/3
+Accept: */*
+Cache-Control: no-cache
+
+"{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}"
+
+<> 2019-02-20T110704.404.html
+
+###
+
+DELETE http://localhost:2019/customers/2
+Accept: */*
+Cache-Control: no-cache
+
+"{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}"
+
+<> 2019-02-20T110702.404.html
+
+###
+
+DELETE http://localhost:2019/customers/1
+Accept: */*
+Cache-Control: no-cache
+
+"{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}"
+
+<> 2019-02-20T110700.404.html
+
+###
+
+POST http://localhost:2019/agents
+Accept: */*
+Cache-Control: no-cache
+
+"{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}"
+
+<> 2019-02-20T110301.415.html
+
+###
+
+POST http://localhost:2019/agents
+Accept: */*
+Cache-Control: no-cache
+
+{"agentcode":1,"agentname":"Subbarao","workingarea":"Bangalore","commission":0.14,"phone":"077-12346674","country":""}
+
+<> 2019-02-20T110252.415.html
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/5
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T110206.200.json
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T110058.500.html
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/5
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T110057.500.html
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/4
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T110056.500.html
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/5
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T110044.500.html
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/4
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T110041.500.html
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T105959.200.json
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T105919.200.json
+
+###
+
+DELETE http://localhost:2019/agents/agentcode/8
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T105756.200.json
+
+###
+
+DELETE http://localhost:2019/orders/ordnum/200100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T105426.200.json
+
+###
+
+DELETE http://localhost:2019/orders/200100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T105415.404.html
+
+###
+
+POST http://localhost:2019/customers
+Accept: */*
+Cache-Control: no-cache
+
+"{"custname":"abc" "custcode": "400" }"
+
+<> 2019-02-20T103446.415.html
+
+###
+
+POST http://localhost:2019/customers
+Accept: */*
+Cache-Control: no-cache
+
+{"custname":"abc" "custcode": "400" }
+
+<> 2019-02-20T103435.415.html
+
+###
+
+POST http://localhost:2019/customers
+Accept: */*
+Cache-Control: no-cache
+
+{"custname":"abc" "custcode": 400 }
+
+<> 2019-02-20T103416.415.html
+
+###
+
+POST http://localhost:8080/customers
+Accept: */*
+Cache-Control: no-cache
+
+{"custname":"abc" "custcode": 400 }
+
+<> 2019-02-20T103404.404.html
+
+###
+
+POST http://localhost:8080/customers
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T103306.404.html
+
+###
+
