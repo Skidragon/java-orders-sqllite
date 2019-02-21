@@ -31,6 +31,10 @@ public class CustomerController {
     public List<Object[]> allCustomersWithOrders() {
         return custRepo.findAllCustomersWithOrders();
     }
+    @GetMapping("name/{custname}")
+    public List<Object[]> getCustomerByNameWithAllOrders(@PathVariable String custname) {
+        return custRepo.findCustomerByNameWithOrders(custname);
+    }
     @PutMapping("custcode/{custcode}")
     public Customer updateCustomer(@RequestBody Customer updatedCustomer, @PathVariable long custcode) throws URISyntaxException {
         Optional<Customer> foundCustomer = custRepo.findById(custcode);
