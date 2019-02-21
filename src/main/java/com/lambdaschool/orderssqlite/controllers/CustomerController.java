@@ -4,11 +4,9 @@ import com.lambdaschool.orderssqlite.models.Customer;
 import com.lambdaschool.orderssqlite.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
@@ -28,5 +26,9 @@ public class CustomerController {
         return custRepo.findCustomerByCode(custcode);
     }
 
+    @PostMapping("")
+    public Customer addNewCustomer(@RequestBody Customer newCustomer) throws URISyntaxException {
+        return custRepo.save(newCustomer);
+    }
 
 }

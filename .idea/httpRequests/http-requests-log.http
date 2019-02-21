@@ -1,0 +1,48 @@
+POST http://localhost:2019/customers
+Accept: */*
+Cache-Control: no-cache
+
+"{"custname":"abc" "custcode": "400" }"
+
+<> 2019-02-20T103446.415.html
+
+###
+
+POST http://localhost:2019/customers
+Accept: */*
+Cache-Control: no-cache
+
+{"custname":"abc" "custcode": "400" }
+
+<> 2019-02-20T103435.415.html
+
+###
+
+POST http://localhost:2019/customers
+Accept: */*
+Cache-Control: no-cache
+
+{"custname":"abc" "custcode": 400 }
+
+<> 2019-02-20T103416.415.html
+
+###
+
+POST http://localhost:8080/customers
+Accept: */*
+Cache-Control: no-cache
+
+{"custname":"abc" "custcode": 400 }
+
+<> 2019-02-20T103404.404.html
+
+###
+
+POST http://localhost:8080/customers
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-20T103306.404.html
+
+###
+
