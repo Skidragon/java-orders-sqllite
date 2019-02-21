@@ -41,4 +41,13 @@ public class OrderController {
         }
         return null;
     }
+    @DeleteMapping("ordnum/{ordnum}")
+    public Order deleteOrder(@PathVariable long ordnum) {
+        Order foundOrder = orderRepo.findOrderByOrderNumber(ordnum);
+        if(foundOrder != null) {
+            orderRepo.deleteById(ordnum);
+            return foundOrder;
+        }
+        return null;
+    }
 }

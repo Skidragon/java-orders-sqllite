@@ -38,4 +38,13 @@ public class CustomerController {
         return null;
     }
 
+    @DeleteMapping("custcode/{custcode}")
+    public Customer deleteCustomer(@PathVariable long custcode) {
+        Customer foundCustomer = custRepo.findCustomerByCode(custcode);
+        if (foundCustomer != null) {
+            custRepo.deleteById(custcode);
+            return foundCustomer;
+        }
+        return null;
+    }
 }

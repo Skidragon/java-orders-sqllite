@@ -42,4 +42,13 @@ public class AgentController {
         }
             return null;
     }
+    @DeleteMapping("agentcode/{agentcode}")
+    public Agent deleteOrder(@PathVariable long agentcode) {
+        Agent foundAgent = agentRepo.findAgentByCode(agentcode);
+        if(foundAgent != null) {
+            agentRepo.deleteById(agentcode);
+            return foundAgent;
+        }
+        return null;
+    }
 }

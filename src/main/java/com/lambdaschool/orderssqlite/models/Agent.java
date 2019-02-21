@@ -16,11 +16,11 @@ public class Agent {
     @Column(nullable = false)
     private long agentcode;
 
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "agent")
+    @OneToMany(cascade = CascadeType.DETACH, mappedBy = "agent")
     @JsonIgnore
     private Set<Customer> customers;
 
-    @OneToMany( cascade = CascadeType.REMOVE, mappedBy = "agent")
+    @OneToMany( cascade = CascadeType.DETACH, mappedBy = "agent")
     @JsonIgnore
     private Set<Order> orders;
 

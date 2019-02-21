@@ -1,0 +1,13 @@
+{
+  "custcode": 8,
+  "custname": "Karolina",
+  "custcity": "Torento",
+  "workingarea": "Torento",
+  "custcountry": "Canada",
+  "grade": "1",
+  "openingamt": 7000.0,
+  "receiveamt": 7000.0,
+  "paymentamt": 9000.0,
+  "outstandingamt": 5000.0,
+  "phone": "HJKORED"
+}
